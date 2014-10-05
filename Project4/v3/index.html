@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JHangMan!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css"> -->
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.16/angular-route.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+  <script src="bootstrap/js/ui-bootstrap-tpls.js"></script>
+  <script src="app.js"></script>
+  <!--<script src="dist/js/bootstrap.min.js"></script>-->  
+
+  </head>
+  <div class="jumbotron">
+    <div class="container maxheight">
+  <body ng-app="JHangman">
+  <center><h1>JHangMan</h1><h2>By Tyler Raborn</h2><h3>Project 4, CS1520</h3><br></center>
+
+
+      <div class="page {{pageClass}}" ng-view></div>
+    </div>
+  </div>
+
+          <!-- <li ng-mouseover="mouseOver(1)" ng-mouseleave="mouseLeave(1)" style="margin:0 0 5px 0;"><a class="tree-element" href="#">Link 2</a></li>
+          <li ng-mouseover="mouseOver(2)" ng-mouseleave="mouseLeave(2)" style="margin:0 0 5px 0;"><a class="tree-element" href="#">Link 3</a></li> -->
+
+      <!--
+      <div class="hero-unit"> 
+        <h1>Current Tree Status: Expanded? {{expanded.toString()}}</h1><br>
+      </div>   
+      -->
+
+</body>
+
+  <style>
+
+  </style>
+
+  <footer>
+    <br>
+    <br>
+    <div>
+    <center>
+
+    <div style="text-align: center; bottom: 5px;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 style="font-size: 100%;">&copy; 2014 Tyler Raborn</h3>
+      <h4><a href="https://angularjs.org/" style="color: #222222;">Built with AngularJS</a></h4>
+      <img src="img/angular-small.png">
+    </div>
+    </center>
+    </div>
+  </footer>
+
+</html>

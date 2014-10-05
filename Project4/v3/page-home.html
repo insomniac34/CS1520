@@ -1,0 +1,20 @@
+<!-- page-home.html -->
+
+<center>
+	<div class="col-md-3 col-xs-12 sidebar" style="width: 100%; margin: 0 auto;">
+		<ul class="nav nav-pills nav-stacked">
+		  <li data-ng-repeat="category in treeCategories" ng-click="onClick(category.id)"><a class="tree-element">{{category.name}}</a> <!-- ng-mouseover="mouseOver(category.id); cssVar='css-class'" ng-mouseleave="mouseLeave(category.id); cssVar=''" -->
+		    <span ng-class="cssVar">
+		      <ul class="nav nav-pills nav-stacked " style="margin: 0 0 5px 0;">
+		        <li data-ng-repeat="subCategory in category.activeSubCategories"><a ng-href="{{subCategory.link}}" data-toggle="{{subCategory.toggle}}" data-target="{{subCategory.dataTarget}}">{{subCategory.name}}</a></li>
+		      </ul>
+		    </span>
+		  </li>
+		</ul>
+	</div>
+
+	<!--
+	<a ng-href="#highscore" class="btn btn-success btn-lg">High Scores</a>
+	<a ng-href="#hangman" class="btn btn-danger btn-lg">Hangman</a>
+	-->
+</center>

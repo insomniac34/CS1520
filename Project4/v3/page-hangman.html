@@ -1,0 +1,45 @@
+<!-- page-hangman.html -->
+
+<center>
+	<div ng-controller="HangmanController">
+
+		<a href="#" class="btn btn-default">Home</a>
+		<a href="#highscore" class="btn btn-default">High Scores</a>
+		<!-- <button class="btn btn-primary" ng-click="reset()">Restart Game</button> -->
+		<br>
+		<div class="check-element" ng-show="started">
+			<button class="btn btn-primary btn-lg" ng-click="startNewRound()">Begin</button>
+		</div>
+		<div class="check-element" ng-show="!started" ng-controller="ModalController">
+			<button class="btn btn-primary" ng-click="open()">Give Up?</button><br> 
+			<!-- <a href="#resetModal" class="btn btn-primary" data-toggle="modal" data-target="#resetModal">Give Up?</a><br> -->
+			(WARNING: This will reset your score!)
+		</div>
+		<div class="check-element" ng-show="showWord">
+			<b>{{$scope.theWord}}</b>
+		</div>
+		<br>
+		<div class="container">
+			<h2>
+				Total Score:<b> {{globalScore}}</b><br>
+				Incorrect Guesses:<b> {{incorrectGuesses}}</b><br>
+				Total Correct Guesses: {{succesfulGuesses}} Word Length: {{theWord.length}} <br>
+				<b>Guessed Letters ({{guessedList.length}} total): </b><br>
+			</h2>
+				<div ng-repeat="guessedLetter in guessedList"><b>{{guessedLetter}} </b></div>
+		</div>
+		<br>
+		<div alert ng-repeat="notification in notifications" type="{{notification.type}}" close="closeNotification($index)">{{notification.msg}}</div>
+		<br>
+		<div ng-repeat="letter in letters" >
+			<div ng-attr-class="{{divList[letter.id] && 'succesful' || 'unsuccesful' }}">
+				<b>{{letter.display}}</b> (Attempts: {{letter.guesses}})
+				<input type="text" id="{{letter.id}}" ng-model="guessed.letters[letter.id]" value="{{letter.display}}">
+				<button ng-click="guess(letter.id, $event)">Guess Letter # {{letter.id+1}}</button>
+				<br>
+			</div>
+		</div>
+
+	</div>
+</center>
+
